@@ -1,8 +1,8 @@
 import pytest
 
 from api_automated_testing.api.check_username_api import CheckUsernameAPI
+from api_automated_testing.utils.TokenManager import TokenManager
 from api_automated_testing.utils.excel_reader import ExcelReader
-from api_automated_testing.utils.get_auth_header import get_auth_header
 from src.config.logging_config import get_logger
 
 
@@ -22,11 +22,11 @@ class TestUser:
 
 
     @pytest.mark.order(3)
-
     @pytest.mark.parametrize("check_username_data", check_username_test_data)
     def test_check_username(self, check_username_data):
         try:
-            headers = get_auth_header()
+            username = check_username_data["username"]
+            headers = TokenManager.get_token_from_dict(username)
             assert check_username_data["expectedResult"] in self.check_username_api.check_username(headers=headers).text
 
         except Exception as e:
