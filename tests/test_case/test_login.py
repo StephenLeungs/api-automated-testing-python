@@ -4,7 +4,7 @@ import pytest
 
 from api_automated_testing.api.login_api import LoginAPI
 from api_automated_testing.api.register_api import RegisterAPI
-from api_automated_testing.utils.TokenManager import TokenManager
+from api_automated_testing.utils.token_manager import TokenManager
 from api_automated_testing.utils.excel_reader import ExcelReader
 from src.config.logging_config import get_logger
 
@@ -17,7 +17,7 @@ class TestLogin:
     """
     注册登录模块测试类
 
-    应包含所有注册登录模块的用例
+    应包含所有注册登录模块的测试用例
     """
     # 日志器
     logger = get_logger(

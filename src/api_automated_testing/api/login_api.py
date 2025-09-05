@@ -12,7 +12,7 @@ class LoginAPI:
 
     封装登录接口
     """
-    def __init__(self):
+    def __init__(self) -> None:
         """
         构造函数
 

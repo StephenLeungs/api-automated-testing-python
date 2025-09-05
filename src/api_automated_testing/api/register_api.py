@@ -13,7 +13,7 @@ class RegisterAPI:
     封装注册接口
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         构造函数
         

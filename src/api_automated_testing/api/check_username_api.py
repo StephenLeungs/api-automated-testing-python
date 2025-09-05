@@ -13,7 +13,7 @@ class CheckUsernameAPI:
     封装查询当前账号接口
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         构造函数
 
